@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="frm">
+  <input formControlName="name" placeholder="name" type="text"> <br>
+  <div *ngIf="!name.valid && (name.dirty || name.touched)">
+    {{ name.errors | json}}
+  </div>
+  <input formControlName="surname" placeholder="surname" type="text"> <br>
+  <div *ngIf="!surname.valid && (surname.dirty || surname.touched)">
+    {{ surname.errors | json}}
+  </div>
+  <input formControlName="email" placeholder="email" type="text"> <br>
+  <div *ngIf="!email.valid && (email.dirty || email.touched)">
+    {{ email.errors | json}}
+  </div>
+  <button>Submit</button>
+</form>
